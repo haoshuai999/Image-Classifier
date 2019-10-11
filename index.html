@@ -1,9 +1,10 @@
-<!doctype html>
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Flower Image Classifier</title>
+  <title>Columbia Landmark Recognizer</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <style>
@@ -17,50 +18,69 @@
     vertical-align: top;
   }
 
-  .row {
+  .insert-row {
     display: table-row;
   }
   .cell {
     display: table-cell;
     padding-right: 20px;
   }
+  .section-head{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .title-area {
+    text-align: center;
+    color: white;
+  }
 
   #file-container {
     margin-bottom: 20px;
   }
+  #headline {
+    background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.2), 
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("columbia.jpg");
+  }
 </style>
 
 <body>
-  <div class="tfjs-example-container">
-    <section class='title-area'>
-      <h1>TensorFlow.js: Using a Keras model in the browser</h1>
-    </section>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-12 title-area py-5" id="headline">
+          <h1>Columbia Landmark Recognizer</h1>
+        </div>
+    </div>
+    <div class="row py-3">
+        <div class="col-md-3 section-head">Description</div>
+          
+        <div class="col-md-9">
+            The website uses a deep learning model in TensorFlow.js, upload your images of Columbia landmarks and the algorithm will tell you the name of them.
+            (Right now the model can only detect three landmarks).
+        </div>
+    </div>
+    <div class="row py-3">
+        <div class="col-md-3 section-head">Status</div>
+        <div class="col-md-9" id="status"></div>
+    </div>
 
-    <section>
-      <p class='section-head'>Description</p>
-      <p>
-        This file is based on <a>https://github.com/tensorflow/tfjs-examples/tree/master/mobilenet</a>.
-      </p>
-    </section>
-
-    <section>
-      <p class='section-head'>Status</p>
-      <div id="status"></div>
-    </section>
-
-    <section>
-      <p class='section-head'>Model Output</p>
-
-      <div id="file-container" style="display: none">
+    <div class="row py-3">
+        <div class="col-md-3 section-head">Model Output</div>
+        <div class="col-md-9" id="file-container" style="display: none">
         Upload an image: <input type="file" id="files" name="files[]" multiple />
-      </div>
-
-      <div id="predictions"></div>
-
-      <img style="display: none" id="cat" src="cat.jpg" width=192 height=192 />
-    </section>
+        </div>
+    </div>
+    <div class="row pl-5" id="predictions"> 
+    </div>
+    <img style="display: none" id="cat" src="cat.jpg" width=192 height=192 />
+  </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.0.0/dist/tf.min.js"></script>
     <script src="index.js"></script>
-  </div>
+
 </body>
+</html>

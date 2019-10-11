@@ -1,16 +1,14 @@
 CLASSES = {
-  0: 'daisy',
-  1: 'dandelion',
-  2: 'roses',
-  3: 'sunflowers',
-  4: 'tulips',
+  0: 'Alma mater',
+  1: 'Jefferson sculpture',
+  2: 'Lion sculpture'
 };
 
 const MODEL_PATH =
     'model.json';
 
 const IMAGE_SIZE = 192;
-const TOPK_PREDICTIONS = 5;
+const TOPK_PREDICTIONS = 3;
 
 let my_model;
 const demo = async () => {
@@ -120,7 +118,7 @@ async function getTopKClasses(logits, topK) {
 
 function showResults(imgElement, classes) {
   const predictionContainer = document.createElement('div');
-  predictionContainer.className = 'pred-container';
+  predictionContainer.className = 'col-md-4';
 
   const imgContainer = document.createElement('div');
   imgContainer.appendChild(imgElement);
@@ -129,7 +127,7 @@ function showResults(imgElement, classes) {
   const probsContainer = document.createElement('div');
   for (let i = 0; i < classes.length; i++) {
     const row = document.createElement('div');
-    row.className = 'row';
+    row.className = 'insert-row';
 
     const classElement = document.createElement('div');
     classElement.className = 'cell';
