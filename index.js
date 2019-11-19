@@ -23,15 +23,15 @@ const demo = async () => {
 
   status('');
 
-  // Make a prediction through the locally hosted cat.jpg.
-  const catElement = document.getElementById('cat');
-  if (catElement.complete && catElement.naturalHeight !== 0) {
-    predict(catElement);
-    catElement.style.display = '';
+  // Make a prediction through the locally hosted almamater.jpg.
+  const expElement = document.getElementById('example');
+  if (expElement.complete && expelement.naturalHeight !== 0) {
+    predict(expElement);
+    expElement.style.display = '';
   } else {
-    catElement.onload = () => {
-      predict(catElement);
-      catElement.style.display = '';
+    expElement.onload = () => {
+      predict(expElement);
+      expElement.style.display = '';
     }
   }
 
