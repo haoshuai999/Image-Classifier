@@ -25,7 +25,7 @@ const demo = async () => {
 
   // Make a prediction through the locally hosted almamater.jpg.
   const expElement = document.getElementById('example');
-  if (expElement.complete && expelement.naturalHeight !== 0) {
+  if (expElement.complete && expElement.naturalHeight !== 0) {
     predict(expElement);
     expElement.style.display = '';
   } else {
